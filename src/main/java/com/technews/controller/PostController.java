@@ -54,7 +54,7 @@ public class PostController {
 
     @PutMapping("/api/posts/{id}")
     public Post updatePost(@PathVariable int id, @RequestBody Post post) {
-        Post tempPost = repository.getById(id);
+        Post tempPost = repository.getReferenceById(id);
         tempPost.setTitle(post.getTitle());
         return repository.save(tempPost);
     }
